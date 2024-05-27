@@ -1,0 +1,13 @@
+numpy==1.21.6
+pandas==2.0.3
+mne==1.2.2
+pyriemann==0.4
+dtw-python==1.3.0
+scikit-learn==1.3.1
+scikit-learn-extra==0.3.0
+tables==3.7.0
+Cython==0.29.35
+dlib==19.24.2
+wfdb
+conan
+Cython==0.29.35
