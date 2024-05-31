@@ -1253,26 +1253,10 @@ def main():
                 print('Not enough good evaluations to apply clustering')
             else:
                 # Let's apply k-medoids to the evaluations that performed well
-                # good_logs = np.asarray([x for x in pos_eval if x[2] > 1.0])
-                good_logs = np.asarray([x for x in pos_eval if x[2] > TOL])
+                good_logs = np.asarray([x for x in pos_eval if x[2] > TOL], dtype=object)
 
                 # We need to convert the dictionary to a list
-                rp1_min = [x['rp1_min'] for x,_,_,_ in good_logs]
-                rp1_max = [x['rp1_max'] for x,_,_,_ in good_logs]
-
-                rp2_min = [x['rp2_min'] for x,_,_,_ in good_logs]
-                rp2_max = [x['rp2_max'] for x,_,_,_ in good_logs]
-
-                rp3_min = [x['rp3_min'] for x,_,_,_ in good_logs]
-                rp3_max = [x['rp3_max'] for x,_,_,_ in good_logs]
-
-                rd_min = [x['rd_min'] for x,_,_,_ in good_logs]
-                rd_max = [x['rd_max'] for x,_,_,_ in good_logs]
-
-                re_min = [x['re_min'] for x,_,_,_ in good_logs]
-                re_max = [x['re_max'] for x,_,_,_ in good_logs]
-
-                X = np.asarray([rp1_min, rp1_max, rp2_min, rp2_max, rp3_min, rp3_max, rd_min, rd_max, re_min, re_max]).T
+                X = np.asarray([[x[key] for key in x.keys() if key != 'lookbackwards'] for x,_,_,_ in good_logs])
 
                 #TODO: we need to find a way to get the best k; maybe we can use the elbow method or the silhouette method; meanwhile, we will use k=3
                 kmedoids = KMedoids(n_clusters=n_clusters, random_state=0).fit(X)

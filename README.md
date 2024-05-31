@@ -18,9 +18,19 @@ This will create a virtual environment and install the required packages.
 
 The dataset used in this work is the CHB-MIT Scalp EEG Database. It is available at https://physionet.org/content/chbmit/1.0.0/. In order to use the dataset, we facilitate several scripts to download and preprocess the data to be used in the algorithm. The scripts are available in the `script` folder.
 
-... details about the scripts ...
+There are three scripts to download the dataset: `aa_import_patients.py`, `aa_import_patient_chb12.py`, and `aa_import_patient_chb24.py`. To run the scripts, use the following commands:
 
-In order to check the correct download of the dataset, you can compare the SHA256 hash of the downloaded files with the ones available in the `patients_hash.csv`.
+```bash
+python scripts/aa_import_patients.py
+python scripts/aa_import_patient_chb12.py
+python scripts/aa_import_patient_chb24.py
+```
+
+In order to check the correct download of the dataset, you can compare the SHA256 hash of the downloaded files with the ones available in the `patients_hash.csv`. We provide a script to check the hash of the generated files. The script is available in the file `scripts/aa_hash_codes.py`. To run the script, use the following command:
+
+```bash
+python scripts/aa_hash_codes.py
+```
 
 ## Usage
 

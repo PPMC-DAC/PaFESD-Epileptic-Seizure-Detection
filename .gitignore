@@ -1,0 +1,12 @@
+# ignore virtual environment
+.venv/*
+# data files
+*.hdf
+*.h5
+*.csv
+*.pkl
+# images
+*.png
+*.pdf
+# logs
+*.out
