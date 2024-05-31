@@ -10,3 +10,5 @@
 *.pdf
 # logs
 *.out
+# metadata
+*.txt
