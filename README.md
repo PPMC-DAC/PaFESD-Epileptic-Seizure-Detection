@@ -14,6 +14,12 @@ pip install -r requirements.txt
 
 This will create a virtual environment and install the required packages. 
 
+The library `EEGLib` is also required to run the code. The library is available at `mylibrary/computeDTW/EEGLib`. Follow the instructions in the `mylibrary/computeDTW/EEGLib/README.md` file to install the library. Do not forget to add the library to the Python path.
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/path/to/EEGLib
+```
+
 ## Dataset
 
 The dataset used in this work is the CHB-MIT Scalp EEG Database. It is available at https://physionet.org/content/chbmit/1.0.0/. In order to use the dataset, we facilitate several scripts to download and preprocess the data to be used in the algorithm. The scripts are available in the `script` folder.
