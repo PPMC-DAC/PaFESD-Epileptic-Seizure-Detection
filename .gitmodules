@@ -1,0 +1,6 @@
+[submodule "lipo"]
+	path = lipo
+	url = https://github.com/FelipeMLopez/lipo
+[submodule "wfdb-python"]
+	path = wfdb-python
+	url = https://github.com/FelipeMLopez/wfdb-python.git
