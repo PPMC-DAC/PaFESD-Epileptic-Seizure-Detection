@@ -4,6 +4,13 @@ The detection of epileptic seizures can have a significant impact on the patient
 
 ## Requirements
 
+Clone the repository and all its submodules:
+
+```bash
+git clone --recurse-submodules https://github.com/PPMC-DAC/PaFESD-Epileptic-Seizure-Detection PaFESD
+cd PaFESD
+```
+
 The code was developed using Python 3.9.13 and the required packages are listed in the `requirements.txt` file. To install them, run the following command:
 
 ```bash
@@ -12,12 +19,30 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-This will create a virtual environment and install the required packages. 
+This will create a virtual environment and install the required packages.
 
-The library `EEGLib` is also required to run the code. The library is available at `mylibrary/computeDTW/EEGLib`. Follow the instructions in the `mylibrary/computeDTW/EEGLib/README.md` file to install the library. Do not forget to add the library to the Python path.
+To simplify the process of adding the libraries to the Python path, export the path to the PaFESD folder:
 
 ```bash
-export PYTHONPATH=$PYTHONPATH:/path/to/EEGLib
+export PAFESD_PATH=/path/to/PaFESD
+```
+
+Add it to the Python path:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:$PAFESD_PATH
+```
+
+The library `EEGLib` is also required to run the code. The library is available at `mylibrary/computeDTW/EEGLib`. Follow the instructions in the `mylibrary/computeDTW/EEGLib/README.md` file to install the library. Do not forget to add the library to the Python path:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/$PAFESD_PATH/mylibrary/computeDTW/EEGLib
+```
+
+We have introduced some modifications to the `lipo` optimizer (https://github.com/jdb78/lipo) and `wfdb-python` library (https://github.com/MIT-LCP/wfdb-python), both available as submodules. Add the path to the submodules to the Python path:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:$PAFESD_PATH/lipo:$PAFESD_PATH/wfdb-python
 ```
 
 ## Dataset
