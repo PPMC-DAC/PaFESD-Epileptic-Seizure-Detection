@@ -39,7 +39,7 @@ The library `EEGLib` is also required to run the code. The library is available 
 export PYTHONPATH=$PYTHONPATH:/$PAFESD_PATH/mylibrary/computeDTW/EEGLib
 ```
 
-We have introduced some modifications to the `lipo` optimizer (https://github.com/jdb78/lipo) and `wfdb-python` library (https://github.com/MIT-LCP/wfdb-python), both available as submodules. Add the path to the submodules to the Python path:
+We have introduced some modifications to the `lipo` optimizer (https://github.com/FelipeMLopez/lipo) and `wfdb-python` library (https://github.com/FelipeMLopez/wfdb-python), both available as submodules. Add the path to the submodules to the Python path:
 
 ```bash
 export PYTHONPATH=$PYTHONPATH:$PAFESD_PATH/lipo:$PAFESD_PATH/wfdb-python
